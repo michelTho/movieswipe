@@ -1,0 +1,21 @@
+{
+  "cSpell.words": [
+    "collectstatic",
+    "corsheaders",
+    "dyno",
+    "Movieswipe",
+    "Procfile",
+    "Procfiles",
+    "runserver",
+    "superlike",
+    "viewset",
+    "viewsets",
+    "votebar",
+    "herokuapp"
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "none",
+  "git.ignoreLimitWarning": true
+}
