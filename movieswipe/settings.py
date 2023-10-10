@@ -138,4 +138,4 @@ STORAGES = {
     },
 }
 
-ALLOWED_HOSTS = os.environ.getenv("ALLOWED_HOSTS", ["*"])
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", ["*"])
