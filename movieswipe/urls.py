@@ -21,5 +21,5 @@ from back import views as back_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("index", back_views.index),
+    path("", back_views.index),
 ]
