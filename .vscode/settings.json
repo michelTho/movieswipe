@@ -3,15 +3,16 @@
     "collectstatic",
     "corsheaders",
     "dyno",
+    "herokuapp",
     "Movieswipe",
+    "movieswiping",
     "Procfile",
     "Procfiles",
     "runserver",
     "superlike",
     "viewset",
     "viewsets",
-    "votebar",
-    "herokuapp"
+    "votebar"
   ],
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
