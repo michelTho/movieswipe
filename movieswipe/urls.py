@@ -18,8 +18,12 @@ from django.contrib import admin
 from django.urls import path
 
 from back import views as back_views
+from ..back.views.movie_viewset import MovieViewSet
+from ..back.views.vote_viewset import VoteViewSet
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", back_views.index),
+    path("api/v1/votes/", VoteViewSet.as_view(), name="vote"),
+    path("api/v1/movies/", MovieViewSet.as_view(), name="movie"),
 ]
