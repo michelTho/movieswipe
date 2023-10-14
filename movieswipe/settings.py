@@ -144,6 +144,12 @@ ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
 # CORS settings
 CORS_ALLOWED_ORIGINS = os.environ.get("CORS_ALLOWED_ORIGINS", "*").split(",")
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.herokuapp.com",
+    "http://localhost:8000",
+    "http://app.movieswipe.com",
+]
+
 # DRF settings
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
