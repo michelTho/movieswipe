@@ -3,7 +3,7 @@ import requests
 
 from typing import Dict
 
-from ..utils.tmdb_parser import is_tmdb_json_movie_adult, parse_tmdb_json_movie
+from .tmdb_parser import is_tmdb_json_movie_adult, parse_tmdb_json_movie
 
 
 TMDB_ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0M2U2NGRmOTVhNDMxODQxZWYzNGE4ZWVjMmVmYTVhYyIsInN1YiI6IjY1MGY0YWU5M2E0YTEyMDExY2YyZTZhNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.pls6o4Vl0QRFoxOQjC2heqAF0DBxikpSAJfgsuKplqM"

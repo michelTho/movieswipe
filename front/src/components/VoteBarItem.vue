@@ -1,4 +1,6 @@
-<script setup lang="ts">
+<script setup>
+
+import { defineEmits } from "vue";
 
 const emit = defineEmits(["dislike", "like", "superlike"]);
 

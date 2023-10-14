@@ -1,8 +1,16 @@
-<script setup lang="ts">
+<script setup>
 
-defineProps({
-  movieResponse: Object,
+import { defineProps, toRefs } from "vue";
+
+const props = defineProps({
+  movieResponse: {
+    image_url: String,
+    title: String,
+    description: String,
+  },
 });
+
+const { movieResponse } = toRefs(props);
 
 </script>
 

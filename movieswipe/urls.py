@@ -17,9 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from back import views as back_views
-from ..back.views.movie_viewset import MovieViewSet
-from ..back.views.vote_viewset import VoteViewSet
+from back import index_view as back_views
+from back.views.movie_viewset import MovieViewSet
+from back.views.vote_viewset import VoteViewSet
 
 urlpatterns = [
     path("admin/", admin.site.urls),

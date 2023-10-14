@@ -1,11 +1,12 @@
-<script setup lang="ts">
-import { ref, watch, type Ref } from 'vue'
+<script setup>
+
+import { ref, watch } from 'vue'
 
 import MovieItem from './components/MovieItem.vue'
 import VoteBarItem from './components/VoteBarItem.vue'
-import { getMovie, type MovieResponse } from './router/getMovie'
+import { getMovie } from './router/getMovie'
 
-const movieResponse: Ref<MovieResponse | Object> = ref({})
+const movieResponse = ref({})
 const constantWatchedValue = ref(0)
 
 const changeMovie = () => {

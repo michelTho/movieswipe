@@ -1,7 +1,4 @@
 from typing import Dict
-from django.db import IntegrityError
-
-from ..models.movie_model import Movie
 
 TMDB_BASE_IMAGE_URL = "http://image.tmdb.org/t/p"
 TMDB_IMAGE_SIZE = "/w500"
@@ -12,7 +9,7 @@ def is_tmdb_json_movie_adult(tmdb_json_movie: Dict) -> bool:
     Checks if a TMDB JSON movie is adult or not
     """
     if "adult" not in tmdb_json_movie:
-        return None
+        raise AttributeError("TMDB JSON movie does not contain 'adult' key")
     if not tmdb_json_movie["adult"]:
         return False
     return True

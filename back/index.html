@@ -1,17 +1,17 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
-    <head>
-      <title>Start Swiping!</title>
-      <link rel="icon" href="{% static 'src/vue/dist/icon.png' %}">
-    </head>
-    <body>
-        <h1>Testing Vue...</h1>
-        <div id="app"></div>
+<html lang="en">
+  <head>
+    <title>Start Swiping!</title>
+    <link rel="icon" href="{% static 'src/vue/dist/icon.png' %}">
+  </head>
+  <body style="margin: 0px;">
+    <!-- Vue app container -->
+    <div id="app"></div>
 
-        <script type="text/javascript" src="{% static 'src/vue/dist/js/chunk-vendors.js' %}"></script>
-        <script type="text/javascript" src="{% static 'src/vue/dist/js/app.js' %}"></script>
-        <link href="{% static 'src/vue/dist/css/app.css' %}" rel=stylesheet>
-    </body>
+    <script type="text/javascript" src="{% static 'src/vue/dist/js/chunk-vendors.js' %}"></script>
+    <script type="text/javascript" src="{% static 'src/vue/dist/js/app.js' %}"></script>
+    <link href="{% static 'src/vue/dist/css/app.css' %}" rel=stylesheet>
+  </body>
 </html>
