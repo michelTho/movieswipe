@@ -6,7 +6,7 @@
 // }
 
 export const getMovie = async () => {
-  const response = await fetch(`http://localhost:8000/api/v1/movies/`)
+  const response = await fetch(`${process.env.HOST ?? 'localhost'}/api/v1/movies/`)
   const validatedResponse = await response.json()
   return validatedResponse
 }
