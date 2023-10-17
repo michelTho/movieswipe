@@ -2,12 +2,14 @@
   "cSpell.words": [
     "collectstatic",
     "corsheaders",
+    "dotenv",
     "dyno",
     "herokuapp",
     "Movieswipe",
     "movieswiping",
     "Procfile",
     "Procfiles",
+    "psycopg",
     "runserver",
     "superlike",
     "viewset",
@@ -18,7 +20,5 @@
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "git.ignoreLimitWarning": true,
-  "eslint.workingDirectories": [
-    {"mode": "auto"}
-  ],
+  "eslint.workingDirectories": [{ "mode": "auto" }]
 }
