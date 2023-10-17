@@ -19,11 +19,7 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load environment variables
-if "ENV" in os.environ:
-    if os.environ.get("ENV") != "production":
-        raise ValueError(
-            "ENV variable must be set to production when defined before loading dotenv file"
-        )
+if "ENV" not in os.environ:
     load_dotenv(dotenv_path=BASE_DIR / ".env")
 
 
