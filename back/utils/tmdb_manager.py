@@ -3,7 +3,9 @@ import requests
 
 from typing import Dict
 
-from .tmdb_parser import is_tmdb_json_movie_adult, parse_tmdb_json_movie
+from ..serializers.movie_serializer import MovieSerializer
+
+from .tmdb_parser import parse_tmdb_json_movie
 
 
 TMDB_ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0M2U2NGRmOTVhNDMxODQxZWYzNGE4ZWVjMmVmYTVhYyIsInN1YiI6IjY1MGY0YWU5M2E0YTEyMDExY2YyZTZhNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.pls6o4Vl0QRFoxOQjC2heqAF0DBxikpSAJfgsuKplqM"
@@ -14,7 +16,19 @@ TMDB_DETAILS_MOVIE_ROUTE = "movie/"
 TMDB_DETAILS_MOVIE_QUERY_PARAMS = "?language=fr-FR"
 
 
-def get_random_tmdb_movie() -> Dict:
+def fetch_and_save_random_tmdb_movie() -> Dict:
+    """
+    Fetches a random movie from TMDB and saves it in our database.
+    """
+    movie: Dict = _get_random_tmdb_movie()
+    serializer = MovieSerializer(data=movie)
+    if serializer.is_valid():
+        serializer.save()
+    else:
+        raise ValueError("MovieSerializer could not serialize retrieved data")
+
+
+def _get_random_tmdb_movie() -> Dict:
     """
     Returns a random movie from the TMDB API, by searching for a random movie below the latest movie's id.
     Note: Since not all ids are used, we search recursively until we find a movie.
