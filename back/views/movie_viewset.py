@@ -24,4 +24,5 @@ class MovieViewSet(views.APIView):
         while True:
             movie = Movie.filter(pk=random.randint(1, max_movie_pk)).first()
             if movie:
+                print(f"Serving movie with pk {movie.pk} to client")
                 return Response(movie, status=status.HTTP_200_OK)
