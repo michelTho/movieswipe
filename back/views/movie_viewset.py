@@ -16,6 +16,7 @@ class MovieViewSet(views.APIView):
     serializer_class = MovieSerializer
 
     def get(self, request):
+        print("GET request received")
         fetch_and_save_random_movie_thread = threading.Thread(
             target=fetch_and_save_random_tmdb_movie
         )
