@@ -18,7 +18,6 @@ watch(
   async () => {
     const response = await getMovie()
     movieResponse.value = response
-    console.log(movieResponse.value)
   },
   { immediate: true }
 )
