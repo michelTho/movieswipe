@@ -30,7 +30,7 @@ if "ENV" not in os.environ:
 SECRET_KEY = "django-insecure-c#(o34o1=1c(kr=9b)vzr7ey!*b8i86+qi*2i@_t)ayu$j=iw_"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG")
+DEBUG = os.environ.get("DEBUG") == "True"
 
 ALLOWED_HOSTS = []
 
@@ -87,10 +87,9 @@ WSGI_APPLICATION = "movieswipe.wsgi.application"
 DATABASES = {
     "default": dj_database_url.config(
         conn_health_checks=True,
-        ssl_require=os.environ.get("SSL_REQUIRE"),
+        ssl_require=os.environ.get("SSL_REQUIRE") == "True",
     ),
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
