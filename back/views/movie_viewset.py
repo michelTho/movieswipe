@@ -20,9 +20,11 @@ class MovieViewSet(views.APIView):
             target=fetch_and_save_random_tmdb_movie
         )
         fetch_and_save_random_movie_thread.start()
-        max_movie_pk = Movie.aggregate(max_movie_pk=Max("pk"))["max_movie_pk"]
+        movies = Movie.objects.all()
+        max_movie_pk = movies.aggregate(max_movie_pk=Max("pk"))["max_movie_pk"]
         while True:
-            movie = Movie.filter(pk=random.randint(1, max_movie_pk)).first()
+            movie = Movie.objects.filter(pk=random.randint(1, max_movie_pk)).first()
             if movie:
                 print(f"Serving movie with pk {movie.pk} to client")
-                return Response(movie, status=status.HTTP_200_OK)
+                movie_serializer = MovieSerializer(movie)
+                return Response(movie_serializer.data, status=status.HTTP_200_OK)
