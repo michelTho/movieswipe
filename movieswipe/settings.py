@@ -32,7 +32,7 @@ if "ENV" not in os.environ:
 SECRET_KEY = "django-insecure-c#(o34o1=1c(kr=9b)vzr7ey!*b8i86+qi*2i@_t)ayu$j=iw_"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  # os.environ.get("DEBUG") == "True"
+DEBUG = True  # os.environ.get("DEBUG") == "True"
 
 ALLOWED_HOSTS = []
 
