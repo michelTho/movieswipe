@@ -6,6 +6,7 @@ from rest_framework import views, status
 from rest_framework.response import Response
 from django.db.models import Max
 
+from ..models.user_model import User
 from ..serializers.movie_serializer import MovieSerializer
 from ..models.movie_model import Movie
 from ..utils.tmdb_manager import fetch_and_save_random_tmdb_movie
@@ -16,7 +17,6 @@ class MovieViewSet(views.APIView):
     serializer_class = MovieSerializer
 
     def get(self, request):
-        print("GET request received")
         fetch_and_save_random_movie_thread = threading.Thread(
             target=fetch_and_save_random_tmdb_movie
         )

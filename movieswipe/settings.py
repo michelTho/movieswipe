@@ -89,7 +89,7 @@ WSGI_APPLICATION = "movieswipe.wsgi.application"
 DATABASES = {
     "default": dj_database_url.config(
         conn_health_checks=True,
-        ssl_require=True,  # os.environ.get("SSL_REQUIRE") == "True", # TODO: use env var
+        ssl_require=False,  # os.environ.get("SSL_REQUIRE") == "True", # TODO: use env var
     ),
 }
 
