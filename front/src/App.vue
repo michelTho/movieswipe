@@ -5,9 +5,20 @@ import { ref, watch } from 'vue'
 import MovieItem from './components/MovieItem.vue'
 import VoteBarItem from './components/VoteBarItem.vue'
 import { getMovie } from './router/getMovie'
+import { postVote } from './router/postVote'
 
 const movieResponse = ref({})
 const constantWatchedValue = ref(0)
+
+const likeMovie = async () => {
+  await postVote({movieId: movieResponse.value.id, isUpvote: true})
+  changeMovie()
+}
+
+const dislikeMovie = async () => {
+  await postVote({movieId: movieResponse.value.id, isUpvote: false})
+  changeMovie()
+}
 
 const changeMovie = () => {
   constantWatchedValue.value++
@@ -28,7 +39,7 @@ watch(
   <main>
     <div class="swiper-container">
       <MovieItem :movieResponse="movieResponse" />
-      <VoteBarItem :onDislike="changeMovie" :onLike="changeMovie" :onSuperlike="changeMovie" />
+      <VoteBarItem :onDislike="dislikeMovie" :onLike="likeMovie" :onSuperlike="likeMovie" />
     </div>
   </main>
 </template>

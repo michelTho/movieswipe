@@ -3,7 +3,7 @@ from rest_framework import serializers
 from ..models.vote_model import Vote
 
 
-class VoteSerializer(serializers.ModelSerializer):
+class VoteSerializer(serializers.Serializer):
     class Meta:
         model = Vote
-        fields = ["movie", "is_upvote"]
+        fields = ["movie", "user", "is_upvote"]
